@@ -5,14 +5,14 @@ document.getElementById('contactForm').addEventListener('submit', function(event
     var email = document.getElementById('email').value;
     var message = document.getElementById('message').value;
 
-    // Create a FormData object and append form data
+    // Create FormData object and append form data
     var formData = new FormData();
     formData.append('name', name);
     formData.append('email', email);
     formData.append('message', message);
 
     // Send form data to backend
-    fetch('backend.php', {
+    fetch('/submit_form', {
         method: 'POST',
         body: formData
     })
